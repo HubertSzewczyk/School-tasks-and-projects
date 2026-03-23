@@ -1,0 +1,14 @@
+Task 1
+Write a Java program in which you declare several integer and floating-point variables, assign them sample values, and then calculate and display the result of addition, subtraction, and division in the console.
+
+Task 2
+Write a program that uses the Scanner class to read the length and width of a rectangle and then calculate its area.
+
+Task 3
+Write a program that uses the JOptionPane class to prompt the user for a number in a dialog box. Then, calculate the square of that number and display the result in the dialog box as well.
+
+Task 4
+Write a program that takes three integers (int variables) and calculates their arithmetic mean, then displays the result as a floating-point number (double).
+
+Task 5
+Write a program that reads the temperature in degrees Celsius from the keyboard, converts it to Fahrenheit degrees using the formula F = (C * 9/5) + 32, and displays the result in the console.
