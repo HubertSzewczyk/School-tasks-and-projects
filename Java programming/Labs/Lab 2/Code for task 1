@@ -1,0 +1,16 @@
+public class Obliczenia {
+    public static void main(String[] args) {
+        
+        int l1 = 12;
+        int l2 = 7;
+        int l3 = 2;
+        double l4 = 333.33;
+        double l5 = 12.7;
+        double l6 = 1.2;
+        
+        System.out.println(l1+l6);
+        System.out.println(l4/l2);
+        System.out.println(l5-l1);
+        System.out.print(l5+(l3*l3));
+    }
+}
