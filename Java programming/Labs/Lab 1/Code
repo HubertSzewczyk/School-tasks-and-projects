@@ -1,0 +1,15 @@
+Task 1
+
+public class Hello {
+  public static void main(String[] args){
+    System.out.print("Hello World");
+  }
+}
+
+Task 2
+public class Hello {
+  public static void main(String[] args){
+    System.out.print("This is my first Java program");
+  }
+}
+
