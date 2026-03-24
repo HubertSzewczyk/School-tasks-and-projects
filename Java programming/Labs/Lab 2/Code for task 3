@@ -1,0 +1,10 @@
+import javax.swing.JOptionPane;
+
+public class SquareCalculator {
+    public static void main(String[] args) {
+        String input = JOptionPane.showInputDialog("Wprowadź liczbę: ");
+        double number = Double.parseDouble(input);
+        double square = number * number;
+        JOptionPane.showMessageDialog(null, "Kwadrat "+ number + " wynosi " + square);
+    }
+}
