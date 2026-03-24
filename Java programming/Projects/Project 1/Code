@@ -1,0 +1,120 @@
+/**
+ * "scanner" służy do odczytu danych wprowadzonych przez użytkownika
+ */
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Kalkulatorzdrowia {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        
+        System.out.println("--- Kalkulator BMI i BMR ---");
+        /**
+         * deklaracja zmiennych
+         */
+         double waga = 0;
+         while (waga<=0){
+             System.out.print("Podaj wagę(kg): ");
+             if (scanner.hasNextDouble()) {
+                 waga = scanner.nextDouble();
+                 if (waga <= 0) System.out.println("Waga musi byc dodatnia!");
+             } else{
+                 System.out.println("Błąd: To nie jest liczba!");
+                 scanner.next(); //instrukcja czyszcząca błędny wpis z bufora skanera
+             }
+        }
+             
+        double wzrost = 0;
+        while (wzrost<=0){
+        System.out.print("Podaj wzrost(cm): ");
+        if (scanner.hasNextDouble()) {
+                 wzrost = scanner.nextDouble();
+                 if (wzrost <= 0) System.out.println("Wzrost musi byc dodatni!");
+             } else{
+                 System.out.println("Błąd: To nie jest liczba!");
+                 scanner.next(); 
+             }
+        }
+        
+        int wiek = 0;
+        while (wiek<=0){
+        System.out.print("Podaj wiek: ");
+        if (scanner.hasNextInt()) {
+                 wiek = scanner.nextInt();
+                 if (wiek <= 0) System.out.println("Wiek musi byc dodatni!");
+             } else{
+                 System.out.println("Błąd: To nie jest liczba!");
+                 scanner.next(); 
+             }
+        }
+        //Walidacja Płci
+        char plec =' ';
+        while (plec != 'M' && plec != 'K') {
+            System.out.print("Podaj płec (M/K): ");
+            // pobranie tekstu, zmiana na wielkie litery i wycinany pierwszy znak
+            String wejscie = scanner.next().toUpperCase();
+            if(wejscie.length() > 0) {
+                plec = wejscie.charAt(0);
+                if(plec != 'M' && plec != 'K') {
+                    System.out.println("Błąd! Wybierz 'M' (Mężczyzna) lub 'K' (Kobieta) ");
+                }
+            }
+        }
+        
+        //Walidacja Aktywności
+        double aktywnosc = 0;
+        boolean poprawnaAktywnosc = false;
+        
+        System.out.println(" 1.2 - brak aktywności fizycznej ");
+        System.out.println(" 1.4 - lekka aktywność (ok. 140 minut tygodniowo ");
+        System.out.println(" 1.6 - średnia aktywność (ok. 280 minut tygodniowo  ");
+        System.out.println("1.8 - wysoka aktywność (ok. 420 minut tygodniowo");
+        System.out.println("2 - bardzo wysoka aktywność (ok. 560 minut tygodniowo ");
+        
+        while (!poprawnaAktywnosc) {
+            System.out.println("Wybierz poziom aktywności (1.2, 1.4, 1.6, 1.8, 2): ");
+            if (scanner.hasNextDouble()) {
+                aktywnosc = scanner.nextDouble();
+                if(aktywnosc == 1.2 || aktywnosc == 1.4 || aktywnosc == 1.6 || aktywnosc == 1.8 || aktywnosc == 2) {
+                    poprawnaAktywnosc = true;
+                } else {
+                    System.out.println("Błąd! Wybierz dokładnie jedną z podanych wartości.");
+                }
+            } else {
+                System.out.println("Błąd! Wpisz liczbę używając kropki");
+                scanner.next();
+            }
+        }
+        
+        /**
+         * *Obliczenia logiczne
+         * BMI = masa / wzrost^2
+         */
+         double wzrostMetry = wzrost / 100;
+         double bmi = waga / (wzrostMetry * wzrostMetry);
+         
+         /**
+          * Wzór Mifflin-ST Jeor (BMR)
+          * Zastosowany operator trójelementowy (skrócony if-else), aby dopasować wzór do płci
+          * Stała dla mężczyzn: +5, dla kobiet -161;
+          */
+        double bmr = (plec == 'M')
+            ? (10 * waga) + (6.25 * wzrost) - (5 * wiek) + 5
+            : (10 * waga) + (6.25 * wzrost) - (5 * wiek) -161; 
+            
+        // Formatowanie wyników
+        System.out.println("\n--- Twoje wyniki ---");
+        System.out.printf("Indeks BMI: %.2f\n ", bmi);
+        
+        //Klasyfikacja BMI wq standardów WHO
+        if (bmi < 18.5) System.out.println("Kategoria: Niedowaga");
+        else if (bmi < 25) System.out.println("Kategoria: Norma");
+        else if (bmi < 30) System.out.println("Kategoria: Nadwaga");
+        else System.out.println("Kategoria: Otyłość");
+        
+        System.out.printf("Całkowite zapotrzebowanie (BMI + PAL): %.2f kcal dziennie\n", bmr + aktywnosc);
+        
+        scanner.close();
+    }
+}
