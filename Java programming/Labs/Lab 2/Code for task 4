@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class SredniaArytmetyczna {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Wprowadź pierwszą liczbę całkowitą: ");
+        int num1 = scanner.nextInt();
+        
+        System.out.print("Wprowadź drugą liczbę całkowitą: ");
+        int num2 = scanner.nextInt();
+        
+        System.out.print("Wprowadź trzecią liczbę całkowitą: ");
+        int num3 = scanner.nextInt();
+        
+        double mean = (num1 + num2 + num3) / 3.0;
+        
+        System.out.printf("Średnia arytmetyczna wynosi: %.2f%n", mean);
+        
+        scanner.close();
+    }
+}
