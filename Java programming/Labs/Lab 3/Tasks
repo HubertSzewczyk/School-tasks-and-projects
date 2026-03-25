@@ -1,0 +1,20 @@
+Task 1 
+Write a program that takes an integer and uses an if-else statement to check whether it is even or odd
+
+Task 2
+Write a program that reads two numbers and uses the if-else operator to check which one is greater and then displays the result
+
+Task 3 
+Write a program that reads the user's age and checks using an if-else construct whether the user is a child (up to 12 years old), a teenager (up to 17 years old), an adult (up to 64 years old), or a senior (65 years old or older)
+
+Task 4
+Write a program that reads the day of the week (1-7) from the user and uses a switch to display the day name (e.g., 1 for Monday, 2 for Tuesday, etc.). Add a default error handler if the user enters a number outside the range
+
+Task 5
+Write a program that converts an amount in Polish zloty (PLN) to a selected currency. The user should first enter the amount in PLN and then select one of three available currencies (e.g., euro, US dollar, British pound, Czech koruna, or Ukrainian hryvnia). 
+Depending on the selection, the program should use a switch statement to convert the amount from PLN to the selected currency using current exchange rates (which should be downloaded from online resources). 
+The conversion result should be displayed in the console or in a dialog box. The program should also handle situations where the user enters an invalid currency, reporting an error
+
+Task 6
+Write a program that calculates the parking fee based on the number of hours. The first hour costs 5 PLN, each additional hour costs 3 PLN. The program should prompt the user for the number of hours, then calculate and display the amount payable.
+
