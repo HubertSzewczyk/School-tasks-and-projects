@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+import java.time.LocalDate;
+
+class Employee implements Serializable {
+    private String id;
+    private String firstName;
+    private String lastName;
+    private double hourlyRate;
+
+    public Employee(String firstName, String lastName, double hourlyRate) {
+        this.id = UUID.randomUUID().toString().substring(0, 5);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hourlyRate = hourlyRate;
+    }
+
+    // Gettery i Settery
+    public String getId() { return id; }
+    public String getFullName() { return firstName + " " + lastName; }
+    public double getHourlyRate() { return hourlyRate; }
+
+    @Override
+    public String toString() {
+        return String.format("[%s] %s %s - Stawka: %.2f zł/h", id, firstName, lastName, hourlyRate);
+    }
+}
+
+class WorkEntry implements Serializable {
+    private String employeeId;
+    private LocalDate date;
+    private double hours;
+
+    public WorkEntry(String employeeId, LocalDate date, double hours) {
+        this.employeeId = employeeId;
+        this.date = date;
+        this.hours = hours;
+    }
+
+    public String getEmployeeId() { return employeeId; }
+    public LocalDate getDate() { return date; }
+    public double getHours() { return hours; }
+}
