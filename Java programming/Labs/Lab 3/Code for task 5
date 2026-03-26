@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class KonwerterWalut {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Podaj kwotę w PLN: ");
+        double kwotaPLN = scanner.nextDouble();
+        
+        System.out.println("Wybierz walutę: 1 - EUR, 2 - USD, 3 - GBP");
+        int wybor = scanner.nextInt();
+        
+        double wynik = 0;
+        String waluta = "";
+
+        switch (wybor) {
+            case 1 -> {
+                wynik = kwotaPLN / 4.30;
+                waluta = "EUR";
+            }
+            case 2 -> {
+                wynik = kwotaPLN / 4.00;
+                waluta = "USD";
+            }
+            case 3 -> {
+                wynik = kwotaPLN / 5.10;
+                waluta = "GBP";
+            }
+            default -> {
+                System.out.println("Błąd: Niepoprawny wybór waluty.");
+                return; // Zakończ program
+            }
+        }
+
+        System.out.printf("Kwota po przeliczeniu: %.2f %s%n", wynik, waluta);
+        
+        scanner.close();
+    }
+}
