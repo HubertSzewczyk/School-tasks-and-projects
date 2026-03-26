@@ -1,0 +1,70 @@
+class PayrollManager {
+    private List<Employee> employees = new ArrayList<>();
+    private List<WorkEntry> workEntries = new ArrayList<>();
+    private final String EMP_FILE = "employees.txt";
+    private final String WORK_FILE = "work_records.txt";
+
+    // OBLICZENIA
+    public double calculateMonthlySalary(String empId, int month) {
+        Employee emp = findEmployee(empId);
+        if (emp == null) return 0;
+
+        double totalHours = workEntries.stream()
+                .filter(e -> e.getEmployeeId().equals(empId) && e.getDate().getMonthValue() == month)
+                .mapToDouble(WorkEntry::getHours)
+                .sum();
+
+        double rate = emp.getHourlyRate();
+        if (totalHours > 160) {
+            double regularHours = 160;
+            double overtimeHours = totalHours - 160;
+            return (regularHours * rate) + (overtimeHours * rate * 1.5);
+        }
+        return totalHours * rate;
+    }
+
+    public double calculateTotalCompanyCosts() {
+        double total = 0;
+        Set<Integer> months = new HashSet<>();
+        for(WorkEntry we : workEntries) months.add(we.getDate().getMonthValue());
+        
+        for(Employee e : employees) {
+            for(int m : months) {
+                total += calculateMonthlySalary(e.getId(), m);
+            }
+        }
+        return total;
+    }
+
+    // OPERACJE NA PLIKACH (Zapis/Odczyt)
+    public void saveData() {
+        try (ObjectOutputStream outEmp = new ObjectOutputStream(new FileOutputStream(EMP_FILE));
+             ObjectOutputStream outWork = new ObjectOutputStream(new FileOutputStream(WORK_FILE))) {
+            outEmp.writeObject(employees);
+            outWork.writeObject(workEntries);
+        } catch (IOException e) {
+            System.err.println("Błąd zapisu danych: " + e.getMessage());
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public void loadData() {
+        try (ObjectInputStream inEmp = new ObjectInputStream(new FileInputStream(EMP_FILE));
+             ObjectInputStream inWork = new ObjectInputStream(new FileInputStream(WORK_FILE))) {
+            employees = (List<Employee>) inEmp.readObject();
+            workEntries = (List<WorkEntry>) inWork.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("Nie znaleziono plików danych. Startujemy z pustą bazą.");
+        } catch (Exception e) {
+            System.err.println("Błąd odczytu danych: " + e.getMessage());
+        }
+    }
+
+    // Zarządzanie listami
+    public void addEmployee(Employee e) { employees.add(e); }
+    public void addWorkEntry(WorkEntry we) { workEntries.add(we); }
+    public List<Employee> getEmployees() { return employees; }
+    public Employee findEmployee(String id) {
+        return employees.stream().filter(e -> e.getId().equals(id)).findFirst().orElse(null);
+    }
+}
