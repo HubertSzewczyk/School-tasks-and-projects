@@ -1,0 +1,46 @@
+public class WorkRecordsApp {
+    public static void main(String[] args) {
+        PayrollManager manager = new PayrollManager();
+        manager.loadData();
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            try {
+                System.out.println("\n--- SYSTEM KADROWO-PŁACOWY ---");
+                System.out.println("1. Dodaj pracownika | 2. Rejestruj godziny | 3. Lista i pensje | 4. Koszty firmy | 5. Wyjście");
+                int choice = Integer.parseInt(sc.nextLine());
+
+                switch (choice) {
+                    case 1:
+                        System.out.print("Imię: "); String fn = sc.nextLine();
+                        System.out.print("Nazwisko: "); String ln = sc.nextLine();
+                        System.out.print("Stawka godzinowa: "); double rate = Double.parseDouble(sc.nextLine());
+                        manager.addEmployee(new Employee(fn, ln, rate));
+                        break;
+                    case 2:
+                        manager.getEmployees().forEach(System.out::println);
+                        System.out.print("Podaj ID pracownika: "); String id = sc.nextLine();
+                        System.out.print("Liczba godzin: "); double hrs = Double.parseDouble(sc.nextLine());
+                        manager.addWorkEntry(new WorkEntry(id, LocalDate.now(), hrs));
+                        break;
+                    case 3:
+                        System.out.print("Podaj miesiąc (1-12): "); int m = Integer.parseInt(sc.nextLine());
+                        for (Employee e : manager.getEmployees()) {
+                            double salary = manager.calculateMonthlySalary(e.getId(), m);
+                            System.out.println(e.getFullName() + " | Pensja za miesiąc " + m + ": " + salary + " zł");
+                        }
+                        break;
+                    case 4:
+                        System.out.println("Całkowity koszt utrzymania personelu: " + manager.calculateTotalCompanyCosts() + " zł");
+                        break;
+                    case 5:
+                        manager.saveData();
+                        System.exit(0);
+                }
+            } catch (Exception e) {
+                System.out.println("BŁĄD: Wprowadzono nieprawidłowe dane! Spróbuj ponownie.");
+            }
+        }
+          scanner.close();
+    }
+}
