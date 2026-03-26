@@ -1,3 +1,5 @@
+Primitive types and variables in Java
+
 Task 1
 Write a Java program in which you declare several integer and floating-point variables, assign them sample values, and then calculate and display the result of addition, subtraction, and division in the console.
 
