@@ -1,0 +1,207 @@
+import java.io.*;
+import java.util.*;
+import java.time.LocalDate;
+import java.util.stream.Collectors;
+
+// --- Data ---
+
+class Employee implements Serializable {
+    private String id;
+    private String firstName;
+    private String lastName;
+    private double hourlyRate;
+
+    public Employee(String firstName, String lastName, double hourlyRate) {
+        this.id = UUID.randomUUID().toString().substring(0, 5);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hourlyRate = hourlyRate;
+    }
+
+    // Gettery i Settery dla edycji
+    public String getId() { return id; }
+    public String getFullName() { return firstName + " " + lastName; }
+    public double getHourlyRate() { return hourlyRate; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setHourlyRate(double hourlyRate) { this.hourlyRate = hourlyRate; }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %s | %s %s | Stawka: %.2f zł/h", id, firstName, lastName, hourlyRate);
+    }
+}
+
+class WorkEntry implements Serializable {
+    private String employeeId;
+    private LocalDate date;
+    private double hours;
+
+    public WorkEntry(String employeeId, LocalDate date, double hours) {
+        this.employeeId = employeeId;
+        this.date = date;
+        this.hours = hours;
+    }
+
+    public String getEmployeeId() { return employeeId; }
+    public LocalDate getDate() { return date; }
+    public double getHours() { return hours; }
+    public void setHours(double hours) { this.hours = hours; }
+}
+
+// --- System logic and Computation ---
+
+class PayrollManager {
+    private List<Employee> employees = new ArrayList<>();
+    private List<WorkEntry> workEntries = new ArrayList<>();
+    private final String DATA_FILE = "payroll_data.bin"; // Plik binarny dla wygody obiektów
+
+    // Dodawanie/Usuwanie/Edycja
+    public void addEmployee(Employee e) { employees.add(e); }
+    
+    public boolean deleteEmployee(String id) {
+        workEntries.removeIf(we -> we.getEmployeeId().equals(id));
+        return employees.removeIf(e -> e.getId().equals(id));
+    }
+
+    public Employee findEmployee(String id) {
+        return employees.stream().filter(e -> e.getId().equals(id)).findFirst().orElse(null);
+    }
+
+    public void addWorkEntry(WorkEntry we) { workEntries.add(we); }
+
+    // Obliczenia
+    public double calculateSalary(String empId, int month) {
+        Employee emp = findEmployee(empId);
+        if (emp == null) return 0;
+
+        double totalHours = workEntries.stream()
+                .filter(we -> we.getEmployeeId().equals(empId) && we.getDate().getMonthValue() == month)
+                .mapToDouble(WorkEntry::getHours).sum();
+
+        double rate = emp.getHourlyRate();
+        if (totalHours > 160) {
+            return (160 * rate) + ((totalHours - 160) * rate * 1.5);
+        }
+        return totalHours * rate;
+    }
+
+    // Widoki i Filtrowanie
+    public void printEmployeeWorkHistory(String empId, int month) {
+        System.out.println("--- Historia pracy dla ID: " + empId + " (Miesiąc: " + month + ") ---");
+        workEntries.stream()
+            .filter(we -> we.getEmployeeId().equals(empId) && we.getDate().getMonthValue() == month)
+            .forEach(we -> System.out.println("Data: " + we.getDate() + " | Godziny: " + we.getHours()));
+    }
+
+    // Pliki
+    public void saveToFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
+            oos.writeObject(employees);
+            oos.writeObject(workEntries);
+            System.out.println("Dane zapisane pomyślnie.");
+        } catch (IOException e) {
+            System.out.println("Błąd zapisu: " + e.getMessage());
+        }
+    }
+
+    public void loadFromFile() {
+        File file = new File(DATA_FILE);
+        if (!file.exists()) return;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
+            employees = (List<Employee>) ois.readObject();
+            workEntries = (List<WorkEntry>) ois.readObject();
+        } catch (Exception e) {
+            System.out.println("Nie udało się wczytać danych.");
+        }
+    }
+
+    public List<Employee> getEmployees() { return employees; }
+}
+
+// --- User interface ---
+
+public class PayrollSystem {
+    private static PayrollManager manager = new PayrollManager();
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        manager.loadFromFile();
+        
+        while (true) {
+            try {
+                System.out.println("\n=== SYSTEM REJESTRACJI PRACY ===");
+                System.out.println("1. Dodaj pracownika");
+                System.out.println("2. Lista pracowników i edycja/usuwanie");
+                System.out.println("3. Zarejestruj godziny");
+                System.out.println("4. Oblicz pensję miesięczną");
+                System.out.println("5. Filtruj historię pracy");
+                System.out.println("6. Wyjście i zapis");
+                System.out.print("Wybór: ");
+
+                int choice = Integer.parseInt(scanner.nextLine());
+
+                switch (choice) {
+                    case 1 -> addEmployeeUI();
+                    case 2 -> manageEmployeesUI();
+                    case 3 -> addHoursUI();
+                    case 4 -> calculateSalaryUI();
+                    case 5 -> filterHistoryUI();
+                    case 6 -> {
+                        manager.saveToFile();
+                        System.out.println("Koniec programu.");
+                        return;
+                    }
+                    default -> System.out.println("Nieprawidłowy wybór.");
+                }
+            } catch (Exception e) {
+                System.out.println("BŁĄD: " + e.getMessage() + ". Wprowadź poprawne dane.");
+            }
+        }
+    }
+
+    private static void addEmployeeUI() {
+        System.out.print("Imię: "); String fn = scanner.nextLine();
+        System.out.print("Nazwisko: "); String ln = scanner.nextLine();
+        System.out.print("Stawka: "); double r = Double.parseDouble(scanner.nextLine());
+        manager.addEmployee(new Employee(fn, ln, r));
+    }
+
+    private static void manageEmployeesUI() {
+        manager.getEmployees().forEach(System.out::println);
+        System.out.print("Podaj ID do edycji/usunięcia (lub '0' aby wrócić): ");
+        String id = scanner.nextLine();
+        if (id.equals("0")) return;
+
+        System.out.print("1. Edytuj | 2. Usuń: ");
+        int op = Integer.parseInt(scanner.nextLine());
+        if (op == 2) {
+            manager.deleteEmployee(id);
+        } else if (op == 1) {
+            Employee e = manager.findEmployee(id);
+            if (e != null) {
+                System.out.print("Nowa stawka: ");
+                e.setHourlyRate(Double.parseDouble(scanner.nextLine()));
+            }
+        }
+    }
+
+    private static void addHoursUI() {
+        System.out.print("ID pracownika: "); String id = scanner.nextLine();
+        System.out.print("Ile godzin dzisiaj: "); double h = Double.parseDouble(scanner.nextLine());
+        manager.addWorkEntry(new WorkEntry(id, LocalDate.now(), h));
+    }
+
+    private static void calculateSalaryUI() {
+        System.out.print("ID pracownika: "); String id = scanner.nextLine();
+        System.out.print("Miesiąc (1-12): "); int m = Integer.parseInt(scanner.nextLine());
+        double salary = manager.calculateSalary(id, m);
+        System.out.printf("Wyliczona pensja (z nadgodzinami): %.2f zł\n", salary);
+    }
+
+    private static void filterHistoryUI() {
+        System.out.print("ID pracownika: "); String id = scanner.nextLine();
+        System.out.print("Miesiąc (1-12): "); int m = Integer.parseInt(scanner.nextLine());
+        manager.printEmployeeWorkHistory(id, m);
+    }
+}
