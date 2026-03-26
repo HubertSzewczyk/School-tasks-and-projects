@@ -4,14 +4,20 @@ public class Parzystosc {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Podaj liczbę całkowitą: ");
-        int liczba = scanner.nextInt();
 
-        if (liczba % 2 == 0) {
-            System.out.println("Liczba " + liczba + " jest parzysta.");
+        if (scanner.hasNextInt()) {
+            int liczba = scanner.nextInt();
+
+            if (liczba % 2 == 0) {
+                System.out.println("Liczba " + liczba + " jest parzysta.");
+            } else {
+                System.out.println("Liczba " + liczba + " jest nieparzysta.");
+            }
+
         } else {
-            System.out.println("Liczba " + liczba + " jest nieparzysta.");
+            System.out.println("Błąd: To, co wpisałeś, nie jest liczbą całkowitą!");
         }
         
-        scanner.close();
+        scanner.close(); 
     }
 }
