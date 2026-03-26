@@ -1,0 +1,8 @@
+public class main {
+    public static void main(String[] args) {
+        for (int i = 65; i <= 90; i++) {
+            char znak = (char) i;
+            System.out.println("Indeks " + i + ": " + znak);
+        }
+    }
+}
