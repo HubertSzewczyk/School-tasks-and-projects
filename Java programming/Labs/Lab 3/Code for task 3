@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class KategorieWiekowe {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ile masz lat? ");
+        int wiek = scanner.nextInt();
+
+        if (wiek <= 12) {
+            System.out.println("Jesteś dzieckiem.");
+        } else if (wiek <= 17) {
+            System.out.println("Jesteś nastolatkiem.");
+        } else if (wiek <= 64) {
+            System.out.println("Jesteś dorosłym.");
+        } else {
+            System.out.println("Jesteś seniorem.");
+        }
+        scanner.close();
+    }
+}
