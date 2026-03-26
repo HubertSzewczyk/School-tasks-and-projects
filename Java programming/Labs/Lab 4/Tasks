@@ -1,0 +1,65 @@
+Task 1
+Write a program that prints the ASCII values ​​of characters with indices 65 to 90.
+To convert numbers to their corresponding ASCII characters in Java, simply cast the integer to the char type using a cast, e.g., char char = (char) number. Each integer is assigned a character according to the ASCII table.
+
+Task 2
+Write a program that prints all integers divisible by 3 between 1 and n, then adds them all and displays the result.
+
+Task 3
+Write a program that prints a multiplication table (from 1x1 to 10x10) in tabular format.
+To obtain tabular format, you must use the tab character \t when printing.
+
+Task 4
+Write a program that prints numbers from 1 to n and their squares in a table format using the following formula:
+
+Number | Square
+
+1 | 1
+
+2 | 4
+
+3 | 9
+
+Task 5
+Write a program that prints an inverted right triangle made of stars with a declared height h.
+
+For example, for h = 5:
+
+*****
+
+****
+
+***
+
+**
+
+*
+
+Task 6
+Write a program that prints all perfect numbers between 1 and 10,000. A perfect number is one whose divisors (excluding itself) sum to that number.
+The algorithm for checking whether a number is perfect involves finding the sum of all its divisors less than itself. 
+If this sum equals the given number, then the number is perfect. The algorithm works as follows: we iterate through numbers less than the given number, add the divisors, and finally compare the sum to the given number.
+
+Task 7
+Write a program that prints and calculates the sum of two control variables in a single loop:
+- i increases from 1 to 5,
+- j increases from 6 to 10.
+
+The program should print the values ​​of i, j, and their sum in each iteration.
+
+Task 8
+Write a program that uses a single for loop with two counters to draw a triangle of asterisks:
+- i increases (specifies the row number),
+- j decreases (specifies the number of spaces before the asterisks).
+
+For example, for n = 5:
+
+*
+
+**
+
+***
+
+****
+
+*****
