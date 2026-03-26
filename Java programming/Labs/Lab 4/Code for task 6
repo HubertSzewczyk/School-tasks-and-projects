@@ -1,0 +1,17 @@
+public class main {
+    public static void main(String[] args) {
+        System.out.println("Liczby doskonałe w przedziale 1 - 10000:");
+        
+        for (int liczba = 1; liczba <= 10000; liczba++) {
+            int sumaDzielnikow = 0;
+            for (int i = 1; i <= liczba / 2; i++) {
+                if (liczba % i == 0) {
+                    sumaDzielnikow += i;
+                }
+            }
+            if (sumaDzielnikow == liczba) {
+                System.out.println(liczba);
+            }
+        }
+    }
+}
