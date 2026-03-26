@@ -1,0 +1,9 @@
+public class main {
+    public static void main(String[] args) {
+        int n = 5;
+        // i rośnie (gwiazdki), j maleje (spacje)
+        for (int i = 1, j = n - 1; i <= n; i++, j--) {
+            System.out.println(" ".repeat(j) + "*".repeat(i));
+        }
+    }
+}
