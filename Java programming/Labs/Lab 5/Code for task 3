@@ -1,0 +1,15 @@
+public class SumaZWarunkiem {
+    public static void main(String[] args) {
+        int suma = 0;
+
+        for (int i = 1; i <= 50; i++) {
+            if (i % 4 == 0) {
+                suma += i;
+                if (suma > 18) {
+                    break;
+                }
+            }
+        }
+        System.out.println("Suma (zatrzymana po przekroczeniu 18): " + suma);
+    }
+}
