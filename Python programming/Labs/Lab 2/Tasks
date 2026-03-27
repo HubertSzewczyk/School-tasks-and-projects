@@ -1,0 +1,16 @@
+Variables, primitive types and basic operations
+
+Task 1
+Write a program that asks the user for the length and width of a rectangle, and then calculates and displays its area
+
+Task 2
+Write a program that asks for two integers a and b, and then calculates and displays the result of integer division (a // b) and the remainder of the division (a % b)
+
+Task 3
+Write a program that asks for the product price (float) and the discount amount (int) in percentage, and then displays the price after the discount
+
+Task 4
+Write a program that asks the user to enter a length in centimeters and then calculates and displays that length in meters and millimeters
+
+Task 5
+Write a program that asks the user to enter a temperature in degrees Celsius and then converts it to degrees Fahrenheit using the formula: F = (C * 9/5) + 32
