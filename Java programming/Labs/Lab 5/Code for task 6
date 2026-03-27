@@ -1,0 +1,26 @@
+public class PiosenkaOPiwie {
+   public static void main(String[] args) {
+       int butelki = 10;  // Początkowa liczba butelek
+
+       while (butelki > 0) {
+            if (butelki == 1) {
+               System.out.println(butelki + " butelka piwa na ścianie,");
+               System.out.println(butelki + " butelka piwa!");
+               System.out.println("Weź jedną, przekaż dalej,");
+               System.out.println("Nie ma butelek, by pić dalej!");
+           } else {
+               System.out.println(butelki + " butelek piwa na ścianie,");
+               System.out.println(butelki + " butelek piwa!");
+               System.out.println("Weź jedną, przekaż dalej,");
+               
+               // Obsługa gramatyki dla ostatniej butelki
+               String nastepnaFraza = (butelki - 1 == 1) ? "1 butelka" : (butelki - 1) + " butelek";
+               System.out.println(nastepnaFraza + " piwa na ścianie!");
+           }
+           System.out.println();  // Pusta linia dla lepszej czytelności
+           butelki--;  
+       }
+
+       System.out.println("Nie ma butelek piwa na ścianie!");
+   }
+}
