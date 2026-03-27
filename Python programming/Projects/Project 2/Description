@@ -1,0 +1,10 @@
+Create a program for managing vehicle records at a car rental company.
+The program should enable:
+• adding cars to the database (make, model, year of manufacture, registration number, daily price),
+• registering car rentals (car, customer, rental date, number of days),
+• editing and deleting car and rental records,
+• calculating the cost of a car rental based on the number of days and daily price,
+• displaying a list of all cars and their availability,
+• displaying a list of all rentals.
+The program must have a simple graphical interface with Tkinter.
+The program should handle exceptions, e.g., a negative number of rental days, a non-existent car or customer, or an invalid menu selection
