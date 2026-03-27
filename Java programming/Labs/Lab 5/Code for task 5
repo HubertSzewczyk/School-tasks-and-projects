@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class SprawdzHaslo {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String poprawneHaslo = "java123";
+        String podaneHaslo = "";
+
+        while (!podaneHaslo.equals(poprawneHaslo)) {
+            System.out.print("Podaj hasło: ");
+            podaneHaslo = scanner.nextLine();
+        }
+        System.out.println("Dostęp przyznany!");
+    scanner.close().
+    }
+}
