@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class SumujDoZera {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int suma = 0;
+        int liczba;
+
+        System.out.println("Podawaj liczby (0 kończy program):");
+        while (true) {
+            liczba = scanner.nextInt();
+            if (liczba == 0) break;
+            suma += liczba;
+        }
+        System.out.println("Suma podanych liczb: " + suma);
+
+      scanner.close();
+    }
+}
