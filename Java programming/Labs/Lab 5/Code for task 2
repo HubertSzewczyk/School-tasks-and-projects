@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Podzielne {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Podaj dzielnik: ");
+        int dzielnik = scanner.nextInt();
+
+        System.out.println("Liczby podzielne przez " + dzielnik + " w przedziale 1-50:");
+        for (int i = 1; i <= 50; i++) {
+            if (i % dzielnik == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        scanner.close();
+    }
+}
