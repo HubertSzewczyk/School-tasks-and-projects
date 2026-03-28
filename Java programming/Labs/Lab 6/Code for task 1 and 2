@@ -1,0 +1,23 @@
+public class Lab6_Zad1_2 {
+    public static void main(String[] args) {
+        powitanie();
+        poleKwadratu(5.0);
+        poleTrojkata(4.0, 6.0);
+    }
+
+    // Zadanie 1
+    public static void powitanie() {
+        System.out.println("Witaj w świecie Javy!");
+    }
+
+    // Zadanie 2
+    public static void poleKwadratu(double bok) {
+        double pole = bok * bok;
+        System.out.println("Pole kwadratu wynosi: " + pole);
+    }
+
+    public static void poleTrojkata(double podstawa, double wysokosc) {
+        double pole = 0.5 * podstawa * wysokosc;
+        System.out.println("Pole trójkąta wynosi: " + pole);
+    }
+}
