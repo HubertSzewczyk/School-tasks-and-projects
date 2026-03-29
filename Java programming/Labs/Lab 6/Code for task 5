@@ -1,0 +1,30 @@
+public class Lab6_Zdrowie {
+    public static void main(String[] args) {
+        // Dane testowe
+        double masa = 70.0;
+        double wzrost = 175.0;
+        int wiek = 25;
+        boolean czyMezczyzna = true;
+
+        double bmr = obliczBMR(masa, wzrost, wiek, czyMezczyzna);
+        System.out.println("Twoje BMR wynosi: " + Math.round(bmr * 100.0) / 100.0 + " kcal");
+
+        // Poziom aktywności: "umiarkowana" -> 1.55
+        double tdee = obliczTDEE(bmr, 1.55);
+        System.out.println("Twoje całkowite zapotrzebowanie (TDEE): " + Math.round(tdee) + " kcal");
+    }
+
+    // Zadanie 5
+    public static double obliczBMR(double masa, double wzrost, int wiek, boolean czyMezczyzna) {
+        if (czyMezczyzna) {
+            return 10 * masa + 6.25 * wzrost - 5 * wiek + 5;
+        } else {
+            return 10 * masa + 6.25 * wzrost - 5 * wiek - 161;
+        }
+    }
+
+    // Zadanie 6
+    public static double obliczTDEE(double bmr, double wspolczynnikAktywnosci) {
+        return bmr * wspolczynnikAktywnosci;
+    }
+}
