@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Lab6_Zad3 {
+    static Scanner skaner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        double dlugosc = podajDlugosc();
+        double szerokosc = podajSzerokosc();
+        
+        double pole = obliczPole(dlugosc, szerokosc);
+        double obwod = obliczObwod(dlugosc, szerokosc);
+        
+        wyswietlanieDanych(dlugosc, szerokosc, pole, obwod);
+    }
+
+    public static double podajDlugosc() {
+        System.out.print("Podaj długość prostokąta: ");
+        return skaner.nextDouble();
+    }
+
+    public static double podajSzerokosc() {
+        System.out.print("Podaj szerokość prostokąta: ");
+        return skaner.nextDouble();
+    }
+
+    public static double obliczPole(double dlugosc, double szerokosc) {
+        return dlugosc * szerokosc;
+    }
+
+    public static double obliczObwod(double dlugosc, double szerokosc) {
+        return 2 * (dlugosc + szerokosc);
+    }
+
+    public static void wyswietlanieDanych(double dl, double szer, double p, double o) {
+        System.out.println("\n--- Dane prostokąta ---");
+        System.out.println("Długość: " + dl);
+        System.out.println("Szerokość: " + szer);
+        System.out.println("Pole: " + p);
+        System.out.println("Obwód: " + o);
+
+  close.scanner();
+    }
+}
