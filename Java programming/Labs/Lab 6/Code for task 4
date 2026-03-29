@@ -1,0 +1,17 @@
+public class Lab6_Zad4 {
+    public static void main(String[] args) {
+        double wplata = 1000.0;
+        
+        // Przypisanie wyniku metody do zmiennej
+        double zysk = obliczZysk(wplata);
+        double nowyStanKonta = wplata + zysk;
+        
+        System.out.println("Wpłacona kwota: " + wplata + " zł");
+        System.out.println("Zysk (4%): " + zysk + " zł");
+        System.out.println("Nowy stan konta: " + nowyStanKonta + " zł");
+    }
+
+    public static double obliczZysk(double kwota) {
+        return kwota * 0.04; // 4% zysku
+    }
+}
