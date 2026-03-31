@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Zadanie6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Wpisz tekst: ");
+        String tekst = scanner.nextLine();
+        
+        StringBuilder wynik = new StringBuilder();
+        for (char c : tekst.toCharArray()) {
+            if (Character.isLowerCase(c)) {
+                wynik.append(Character.toUpperCase(c));
+            } else if (Character.isUpperCase(c)) {
+                wynik.append(Character.toLowerCase(c));
+            } else {
+                wynik.append(c);
+            }
+        }
+        System.out.println("Wynik: " + wynik.toString());
+        scanner.close();
+    }
+}
