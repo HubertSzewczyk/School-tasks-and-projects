@@ -1,0 +1,46 @@
+Metody typu void i zwracające wartości
+
+Zadanie 1.
+
+Napisz metodę powitanie(), która wypisze na ekran komunikat „Witaj w świecie Javy!”.
+Zadanie 2.
+Utwórz 2 metody, które będą obliczały pola następujących figur: kwadrat (przyjmująca długość boku) i trójkąt (przyjmująca podstawę i wysokość). Na koniec każda metoda powinna wyświetlać wynik obliczeń.
+
+Zadanie 3.
+Napisz program, który oblicza pole i obwód prostokąta z wykorzystaniem następujących metod: 
+
+podajDlugosc() - wyświetlenie prośby o podanie długości prostokąta, 
+podajSzerokosc() - wyświetlenie prośby o podanie szerokości prostokąta, 
+obliczPole(double dlugosc, double szerokosc) - przyjęcie argumentów w postaci długości i szerokości do wyliczenia pola prostokąta,
+obliczObwod(double dlugosc, double szerokosc) - przyjęcie argumentów w postaci długości i szerokości do wyliczenia obwodu prostokąta,
+
+wyswietlanieDanych(double dlugosc, double szerokosc, double pole, double obwod) - wyświetlenie komunikatu o długości, szerokości i polu prostokąta.
+
+Zadanie 4.
+Utwórz metodę, która obliczy zysk z lokaty. Załóż, że klient dostaje 4% od wpłaconej wartości. Wynik działania metody przypisz do zmiennej. Następnie wykorzystaj go do podania zaktualizowanego stanu konta klienta i wyświetlenia komunikatu o nim. 
+
+Zadanie 5.
+Utwórz metodę, która oblicza podstawową przemianę materii (BMR) na podstawie masy ciała (kg), wzrostu (cm) i wieku (lata). Uzyskany wynik oznacza liczbę kalorii, które organizm spala w spoczynku każdego dnia.
+
+Wzory na BMR:
+
+dla mężczyzn: BMR = 10 * masa + 6,25 * wzrost −5 * wiek + 5
+dla kobiet: BMR = 10 * masa + 6,25 * wzrost − 5 *wiek − 161
+
+Zadanie 6.
+Utwórz metodę, która oblicza całkowite dzienne zapotrzebowanie kaloryczne (TDEE) na podstawie BMR i poziomu aktywności. 
+
+Poziomy aktywności wraz z wartością współczynnika:
+    brak --> 1,2,
+
+    lekka --> 1,375,
+
+    umiarkowana --> 1,55,
+
+    duża --> 1,725,
+
+    bardzo duża --> 1,9.
+
+
+Wzór na TDEE:
+TDEE = BMR * współczynnik
