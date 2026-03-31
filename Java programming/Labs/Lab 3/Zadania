@@ -1,0 +1,19 @@
+Struktury warunkowe: if-else, switch
+
+Zadanie 1 
+Napisz program, który pobiera liczbę całkowitą i sprawdza za pomocą instrukcji if-else, czy jest parzysta, czy nieparzysta.
+
+Zadanie 2
+Napisz program, który wczytuje dwie liczby i za pomocą if-else sprawdza, która z nich jest większa, a następnie wyświetla wynik.
+
+Zadanie 3 
+Napisz program, który wczytuje wiek użytkownika i sprawdza przy pomocy if-else, czy użytkownik jest dzieckiem (do 12 lat), nastolatkiem (do 17 lat), dorosłym (do 64 lata) czy seniorem (65 lat i więcej).
+
+Zadanie 4
+Napisz program, który konwertuje kwotę w złotówkach na wybraną walutę. Użytkownik powinien najpierw podać kwotę w PLN, a następnie wybrać jedną z trzech dostępnych walut (np.  euro, dolar amerykański, funt brytyjski, korona czeska lub hrywna ukraińska).
+W zależności od wyboru program, korzystając z instrukcji switch, powinien przeliczyć kwotę z PLN na daną walutę, wykorzystując aktualne kursy (które należy pobrać z zasobów sieciowych).
+Wynik przeliczenia powinien zostać wyświetlony w konsoli lub w oknie dialogowym. Program powinien również obsłużyć sytuację, gdy użytkownik wprowadzi niepoprawny wybór waluty i w takim przypadku poinformować go o błędzie.
+
+Zadanie 6
+Napisz program, który oblicza opłatę parkingową na podstawie liczby godzin. Pierwsza godzina kosztuje 5 zł, każda kolejna kosztuje 3 zł. 
+Program powinien pytać użytkownika o liczbę godzin, a następnie obliczać i wyświetlać kwotę do zapłaty. 
