@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Zadanie4 {
+    public static void main(String[] args) {
+        ArrayList<Integer> unikalneLiczby = new ArrayList<>();
+        Random random = new Random();
+
+        while (unikalneLiczby.size() < 10) {
+            int r = random.nextInt(30) + 1;
+            if (!unikalneLiczby.contains(r)) {
+                unikalneLiczby.add(r);
+            }
+        }
+
+        System.out.println("10 unikalnych liczb: " + unikalneLiczby);
+    }
+}
