@@ -1,0 +1,16 @@
+Typy zmienne i proste
+
+Zadanie 1
+Napisz program w Javie, w którym zadeklarujesz kilka zmiennych typu całkowitego i zmiennoprzecinkowego, przypiszesz im przykładowe wartości, a następnie obliczysz i wyświetlisz w konsoli wynik dodawania, odejmowania i dzielenia.
+
+Zadanie 2
+Napisz program, który korzysta z klasy Scanner do wczytania długości i szerokości prostokąta, a następnie oblicza jego pole. 
+
+Zadanie 3
+Napisz program, który korzysta z klasy JOptionPane, aby poprosić użytkownika o podanie liczby w oknie dialogowym. Następnie oblicz kwadrat tej liczby i wyświetl wynik również w oknie dialogowym.
+
+Zadanie 4
+Napisz program, który pobiera trzy liczby całkowite (zmienne typu int) i oblicza ich średnią arytmetyczną, a następnie wyświetla wynik jako liczbę zmiennoprzecinkową (double).
+
+Zadanie 5
+Napisz program, który wczytuje z klawiatury temperaturę w stopniach Celsjusza, przelicza ją na stopnie Fahrenheita według wzoru F = (C * 9/5) + 32 i wyświetla wynik w konsoli.
