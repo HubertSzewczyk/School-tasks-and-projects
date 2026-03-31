@@ -1,0 +1,26 @@
+Klasa i obiekt
+
+Zadanie 1.
+Utwórz klasę Uczen. Klasa ma posiadać następujące atrbuty: String imie, String nazwisko, double sredniaOcen. Ma również mieć podane metody: void poprawSrednia(double nowaSrednia) – ustawia nową średnią ocen, boolean czyZdaje() – zwraca true, jeśli średnia ocen jest ≥ 2.0, void przedstaw() – wypisuje imię i nazwisko ucznia. Do tworzenia obiektów klasy ma być odpowiedni konstruktor.
+W klasie Main utwórz co najmniej 3 obiekty klasy Uczen i sprawdź działanie metod.
+
+Zadanie 2.
+Utwórz klasę Samochod. Klasa ma posiadać następujące atrybuty: String marka, String model, int rokProdukcji, int przebieg. Ma również mieć podane metody: void jedz(int kilometry) – zwiększa przebieg samochodu o podaną liczbę kilometrów, void wyswietlInformacje() – wyświetla informacje o samochodzie, boolean czyKlasyk() – zwraca true, jeśli samochód ma więcej niż 25 lat (obliczenia: od aktualnego orku odejmujemy rokProdukcji). Do tworzenia obiektów klasy ma być odpowiedni konstruktor.
+W klasie Main utwórz co najmniej 3 obiekty klasy Samochod i sprawdź działanie metod.
+
+Zadanie 3.
+Utwórz klasę Produkt. Klasa ma posiadać następujące atrybuty: String nazwa, double cena, int ilosc. Ma również mieć podane metody: void kup(int sztuki) – zmniejsza ilość produktu, jeśli dostępna liczba sztuk jest wystarczająca, void dodaj(int sztuki) – zwiększa ilość produktu, double wartoscMagazynu() – zwraca wartość całkowitą (cena * ilość). Do tworzenia obiektów klasy ma być odpowiedni konstruktor.
+W klasie Main utwórz co najmniej 3 obiekty klasy Produkt i sprawdź działanie metod.
+
+Zadanie 4.
+
+Utwórz klasę Ksiazka. Klasa ma posiadać następujące atrybuty: String tytul, String autor, int liczbaStron, boolean przeczytana. Ma również mieć podane metody: void oznaczJakoPrzeczytana() – ustawia wartość przeczytana na true, void wyswietlOpis() – wyświetla informacje o książce, boolean czyDluga() – zwraca true, jeśli liczba stron jest większa niż 300. Do tworzenia obiektów klasy ma być odpowiedni konstruktor.
+W klasie Main utwórz co najmniej 3 obiekty klasy Ksiazka i sprawdź działanie metod.
+
+Zadanie 5.
+Utwórz klasę KontoBankowe. Klasa ma posiadać następujące atrybuty: String numerKonta, String wlasciciel, double saldo. Ma również mieć podane metody: void wplac(double kwota) – zwiększa saldo o podaną kwotę, boolean wyplac(double kwota) – zmniejsza saldo, jeśli jest wystarczające, void pokazSaldo() – wyświetla aktualne saldo. Do tworzenia obiektów klasy ma być odpowiedni konstruktor.
+W klasie Main utwórz co najmniej 3 obiekty klasy KontoBankowe i sprawdź działanie metod.
+
+Zadanie 6.
+Zaprojektuj własną klasę z dowolnymi atrybutami, konstruktorem i co najmniej 3 różnymi metodami. 
+W klasie Main utwórz co najmniej 3 obiekty klasy i uruchom na ich dostępne metody.
