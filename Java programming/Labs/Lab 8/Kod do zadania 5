@@ -1,0 +1,16 @@
+import java.util.HashSet;
+import java.util.Random;
+
+public class Zadanie5 {
+    public static void main(String[] args) {
+        HashSet<Integer> zbior = new HashSet<>();
+        Random random = new Random();
+
+        for (int i = 0; i < 15; i++) {
+            zbior.add(random.nextInt(20) + 1);
+        }
+
+        System.out.println("Unikalne liczby w zbiorze: " + zbior);
+        System.out.println("Liczba unikalnych elementów: " + zbior.size());
+    }
+}
