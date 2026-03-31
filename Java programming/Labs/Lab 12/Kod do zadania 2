@@ -1,0 +1,26 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Zadanie2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] tablica = new int[10];
+        // Wypełnianie tablicy losowymi liczbami z zakresu 1-50
+        for (int i = 0; i < 10; i++) {
+            tablica[i] = (int) (Math.random() * 50) + 1;
+        }
+        System.out.println("Tablica 10-elementowa została utworzona (wartości z zakresu 1-50).");
+        
+        try {
+            System.out.print("Podaj indeks elementu do wyświetlenia (0-9): ");
+            int indeks = scanner.nextInt();
+            System.out.println("Element o indeksie " + indeks + ": " + tablica[indeks]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Błąd: Indeks poza zakresem tablicy (dozwolone 0-9).");
+        } catch (InputMismatchException e) {
+            System.out.println("Błędny format danych. Podaj liczbę całkowitą.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
