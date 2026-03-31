@@ -1,0 +1,45 @@
+class KontoBankowe {
+    String numerKonta;
+    String wlasciciel;
+    double saldo;
+
+    public KontoBankowe(String numerKonta, String wlasciciel, double saldo) {
+        this.numerKonta = numerKonta;
+        this.wlasciciel = wlasciciel;
+        this.saldo = saldo;
+    }
+
+    public void wplac(double kwota) {
+        saldo += kwota;
+        System.out.println("Wpłacono " + kwota + " zł. Nowe saldo: " + saldo);
+    }
+
+    public boolean wyplac(double kwota) {
+        if (saldo >= kwota) {
+            saldo -= kwota;
+            System.out.println("Wypłacono " + kwota + " zł z konta " + wlasciciel);
+            return true;
+        } else {
+            System.out.println("Niestety jesteś biedny");
+            return false;
+        }
+    }
+
+    public void pokazSaldo() {
+        System.out.println("Właściciel: " + wlasciciel + ", Saldo: " + saldo + " zł");
+    }
+}
+
+public class Main {
+    public static void main(String[] args){
+        System.out.println("\n--- Zadanie 5: KontoBankowe ---");
+        KontoBankowe b1 = new KontoBankowe("001", "Adam", 1000.0);
+        KontoBankowe b2 = new KontoBankowe("002", "Ewa", 500.0);
+        KontoBankowe b3 = new KontoBankowe("003", "Marek", 2500.0);
+        
+        b1.pokazSaldo();
+        b1.wplac(200);
+        b2.wyplac(600); //  braku środków
+        b3.wyplac(500);
+    }
+}
