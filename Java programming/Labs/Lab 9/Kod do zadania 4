@@ -1,0 +1,12 @@
+public class Zadanie4 {
+    public static void main(String[] args) {
+        System.out.println(generuj_email("Jan", "Kowalski"));
+    }
+
+    public static String generuj_email(String imie, String nazwisko) {
+        String czescImie = imie.substring(0, Math.min(imie.length(), 3)).toLowerCase();
+        String czescNazwisko = nazwisko.substring(0, Math.min(nazwisko.length(), 3)).toLowerCase();
+        
+        return czescImie + czescNazwisko + "@nasza-uczelnia.edu.pl";
+    }
+}
