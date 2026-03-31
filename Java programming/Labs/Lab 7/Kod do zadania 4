@@ -1,0 +1,32 @@
+import java.util.Random;
+
+public class Zadanie4 {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[] tablica = new int[15];
+        int parzyste = 0, nieparzyste = 0;
+
+        for (int i = 0; i < tablica.length; i++) {
+            tablica[i] = random.nextInt(51);
+        }
+
+        System.out.print("Liczby parzyste: ");
+        for (int liczba : tablica) {
+            if (liczba % 2 == 0) {
+                System.out.print(liczba + " ");
+                parzyste++;
+            }
+        }
+
+        System.out.print("\nLiczby nieparzyste: ");
+        for (int liczba : tablica) {
+            if (liczba % 2 != 0) {
+                System.out.print(liczba + " ");
+                nieparzyste++;
+            }
+        }
+
+        System.out.println("\nIlość parzystych: " + parzyste);
+        System.out.println("Ilość nieparzystych: " + nieparzyste);
+    }
+}
