@@ -1,0 +1,24 @@
+import java.io.*;
+
+public class Zadanie3 {
+    public static void main(String[] args) {
+        int suma = 0;
+        try (BufferedReader br = new BufferedReader(new FileReader("zadanie3.txt"))) {
+            String linia;
+            while ((linia = br.readLine()) != null) {
+                int liczba = Integer.parseInt(linia.trim());
+                if (liczba > 10) {
+                    suma += liczba;
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("wyniki3.txt"))) {
+            bw.write(Integer.toString(suma));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
