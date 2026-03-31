@@ -1,7 +1,9 @@
-BMI and calorie calculator
+Kalkulator BMI i kalorii
 
-Create an application that calculates the user's BMI and estimated daily caloric needs.
-The program should allow the user to enter the following data: height (cm), weight (kg), age, gender, and physical activity level.
-The program should calculate:
-• BMI (Body Mass Index) and display the category (underweight, normal, overweight, obese).
-• Caloric requirement (BMR) using the Mifflin-St. Jeor formula.
+Stwórz aplikację, która oblicza wskaźnik BMI oraz szacunkowe dzienne zapotrzebowanie
+kaloryczne użytkownika.
+Program powinien umożliwiać wprowadzenie danych: wzrost (cm), waga (kg), wiek, płeć oraz
+poziom aktywności fizycznej.
+Program ma obliczać:
+• BMI (Body Mass Index) i wyświetla kategorię (niedowaga, norma, nadwaga, otyłość).
+• Zapotrzebowanie kaloryczne (BMR) według wzoru Mifflina-St Jeor.
