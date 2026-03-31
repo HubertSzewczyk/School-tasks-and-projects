@@ -1,0 +1,42 @@
+class Samochod {
+    String marka;
+    String model;
+    int rokProdukcji;
+    int przebieg;
+
+    public Samochod(String marka, String model, int rokProdukcji, int przebieg) {
+        this.marka = marka;
+        this.model = model;
+        this.rokProdukcji = rokProdukcji;
+        this.przebieg = przebieg;
+    }
+
+    public void jedz(int kilometry) {
+        this.przebieg += kilometry;
+        System.out.println("Samochód " + marka + " przejechał " + kilometry + " km. Aktualny przebieg: " + przebieg);
+    }
+
+    public void wyswietlInformacje() {
+        System.out.println("Pojazd: " + marka + " " + model + ", Rok: " + rokProdukcji + ", Przebieg: " + przebieg + " km");
+    }
+
+    public boolean czyKlasyk() {
+        // Zakładając, że aktualny rok to 2026
+        return (2026 - rokProdukcji) > 25;
+    }
+}
+
+// Sprawdzanie klasy Samochody
+public class Main {
+    public static void main(String[] args) {
+System.out.println("\n--- Zadanie 2: Samochod ---");
+        Samochod s1 = new Samochod("Toyota", "Corolla", 2015, 129832);
+        Samochod s2 = new Samochod("FSO", "Polonez", 1990, 253422);
+        Samochod s3 = new Samochod("Tesla", "Model 3", 2024, 15322);
+
+        s1.wyswietlInformacje();
+        s1.jedz(500);
+        System.out.println("Czy s2 to klasyk? " + s2.czyKlasyk());
+        System.out.println("Czy s3 to klasyk? " + s3.czyKlasyk());
+      }
+}
