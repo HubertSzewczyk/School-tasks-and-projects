@@ -1,0 +1,35 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class Osoba {
+    private int wiek;
+    
+    public Osoba(int wiek) {
+        if (wiek < 0 || wiek > 150) {
+            throw new IllegalArgumentException("Wiek musi być w zakresie 0-150.");
+        }
+        this.wiek = wiek;
+    }
+    
+    public int getWiek() {
+        return wiek;
+    }
+}
+
+public class Zadanie5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.print("Podaj wiek osoby: ");
+            int wiek = scanner.nextInt();
+            Osoba osoba = new Osoba(wiek);  // konstruktor może zgłosić wyjątek
+            System.out.println("Obiekt utworzony pomyślnie. Wiek: " + osoba.getWiek());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Błąd podczas tworzenia obiektu: " + e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println("Błędny format danych. Podaj liczbę całkowitą.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
