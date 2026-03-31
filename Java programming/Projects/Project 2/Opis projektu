@@ -1,0 +1,16 @@
+Ewidencja pracy i kalkulator wynagrodzeń
+
+Stwórz aplikację do ewidencji godzin pracy pracowników oraz obliczania ich wynagrodzenia.
+Program powinien umożliwiać:
+• dodawanie pracowników (imię, nazwisko, stawka godzinowa),
+• rejestrowanie przepracowanych godzin każdego pracownika w danym dniu,
+• edytowanie i usuwanie zapisów.
+Program ma obliczać:
+• miesięczne wynagrodzenie na podstawie przepracowanych godzin i stawki,
+• możliwość uwzględnienia nadgodzin (np. powyżej 160h – +50% stawki),
+• sumaryczne koszty wynagrodzeń dla całej firmy.
+Program ma umożliwić przeglądanie danych:
+• lista wszystkich pracowników i ich przepracowanych godzin,
+• filtrowanie według miesiąca lub konkretnego pracownika.
+Dane powinny być przechowywane w pliku (np. txt).
+Obsługa wyjątków dla błędnych danych (np. ujemne godziny, błędny format daty).
