@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Zadanie2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] tablica = new int[20];
+        int licznik = 0;
+
+        System.out.println("Podawaj liczby całkowite (zapisze tylko parzyste):");
+        while (licznik < 20) {
+            int liczba = scanner.nextInt();
+            if (liczba % 2 == 0) {
+                tablica[licznik] = liczba;
+                licznik++;
+                System.out.println("Zapisano (" + licznik + "/20)");
+            } else {
+                System.out.println("To nie jest liczba parzysta, spróbuj ponownie.");
+            }
+        }
+        scanner.close();
+    }
+}
