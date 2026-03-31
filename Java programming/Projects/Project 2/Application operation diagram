@@ -1,1 +1,0 @@
-The application stores data in RAM, and when it starts and closes, it communicates with text files to maintain data continuity.
