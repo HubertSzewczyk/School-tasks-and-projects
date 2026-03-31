@@ -1,0 +1,42 @@
+class Produkt {
+    String nazwa;
+    double cena;
+    int ilosc;
+
+    public Produkt(String nazwa, double cena, int ilosc) {
+        this.nazwa = nazwa;
+        this.cena = cena;
+        this.ilosc = ilosc;
+    }
+
+    public void kup(int sztuki) {
+        if (ilosc >= sztuki) {
+            ilosc -= sztuki;
+            System.out.println("Kupiono " + sztuki + " szt. produktu " + nazwa);
+        } else {
+            System.out.println("Brak wystarczającej ilości produktu " + nazwa + " w magazynie!");
+        }
+    }
+
+    public void dodaj(int sztuki) {
+        ilosc += sztuki;
+        System.out.println("Dodano " + sztuki + " szt. do magazynu. Obecnie: " + ilosc);
+    }
+
+    public double wartoscMagazynu() {
+        return cena * ilosc;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("\n--- Zadanie 3: Produkt ---");
+        Produkt p1 = new Produkt("Chleb", 4.50, 20);
+        Produkt p2 = new Produkt("Mleko", 3.20, 50);
+        Produkt p3 = new Produkt("Kawa", 25.0, 10);
+        
+        p1.kup(5);
+        p2.dodaj(10);
+        System.out.println("Wartość magazynu p3: " + p3.wartoscMagazynu() + " zł");
+    }
+}
