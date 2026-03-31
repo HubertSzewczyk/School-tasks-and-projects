@@ -1,0 +1,34 @@
+Łańcuchy tekstowe
+
+Zadanie 1. 
+Napisz program, który który wczyta od użytkownika tekst i wypisze liczbę znaków w tekście.
+
+Zadanie 2. 
+Napisz program, który wczyta od użytkownika tekst i wypisze go w odwrotnej kolejności znaków.
+
+Zadanie 3. 
+Napisz program, który wczyta od użytkownika tekst i sprawdzi, czy jest on palindromem (czytany od tyłu jest taki sam jak od przodu), stosując porównywanie poszczególnych liter. 
+
+Zadanie 4. 
+Napisz program, który będzie odpowiedzialny za generowanie adresów e-mail na podstawie imienia i nazwiska użytkownika. Program ma mieć metodę generuj_email, która utworzy adres e-mail. Metoda ta powinna pobierać trzy pierwsze litery imienia oraz trzy pierwsze litery nazwiska użytkownika, a następnie łączyć je i dodawać końcówkę "@nasza-uczelnia.edu.pl". 
+
+Zadanie 5. 
+Napisz program, który będzie generował wizytówkę wg poniższego wzoru. Program ma mieć metodę  wydrukuj_wizytówkę, która będzie drukować wizytówkę w określonym formacie (ilość gwiazdek powinna odpowiadać długości najdłużej linijki wizytówki):
+
+******************
+
+Imię Nazwisko
+
+Adres
+
+Kod pocztowy Miasto
+
+Telefon
+
+******************
+
+Zadanie 6. 
+Napisz program, który wczyta od użytkownika tekst i zamieni wszystkie małe litery na wielkie, a wszystkie wielkie litery na małe.
+
+Zadanie 7. 
+Napisz program, który poprosi o podanie tekstu i wzorca, a następnie sprawdzi, czy wzorzec występuje w tekście. Program powinien wypisać wszystkie pozycje (indeksy), na których występuje wzorzec.
