@@ -1,0 +1,27 @@
+Obsługa wyjątków
+
+Zadanie 1. 
+Napisz program, który pobiera od użytkownika liczbę całkowitą i oblicza jej kwadrat. 
+Jeżeli użytkownik poda wartość, która nie jest liczbą, program powinien obsłużyć wyjątek i poinformować użytkownika o błędnym formacie danych.
+
+Zadanie 2. 
+Napisz program, który utworzy 10-elementową tablicę liczb całkowitych z zakresu 1-50, a następnie umożliwi użytkownikowi podanie indeksu elementu do wyświetlenia. 
+Program powinien obsługiwać wyjątek występujący w przypadku podania indeksu spoza zakresu tablicy.
+
+Zadanie 3. 
+Napisz program, który pobiera od użytkownika sześć liczb, zapisuje je do tablicy, a następnie wykonuje operację dzielenia. 
+Program powinien obsługiwać zarówno błędne dane wejściowe, jak i dzielenie przez zero, stosując mechanizm obsługi wyjątków.
+
+Zadanie 4. 
+Napisz program, który próbuje otworzyć plik tekstowy o podanej nazwie i odczytać jego zawartość. 
+W przypadku braku pliku program powinien przechwycić wyjątek i wyświetlić stosowny komunikat, zamiast zakończyć działanie błędem.
+
+
+Zadanie 5. 
+Utwórz klasę, której konstruktor sprawdza poprawność przekazanych danych wejściowych. 
+W przypadku wykrycia niepoprawnych danych konstruktor powinien zgłosić wyjątek, który zostanie obsłużony podczas tworzenia obiektu w metodzie main().
+
+Zadanie 6. 
+Utwórz klasę, która zawiera metodę sprawdzającą poprawność hasła użytkownika. 
+Metoda powinna przyjmować hasło jako parametr i zgłaszać wyjątek w sytuacji, gdy hasło jest zbyt krótkie (np. ma mniej niż 8 znaków). 
+W metodzie main() wywołaj tę metodę, przechwytując zgłoszony wyjątek i wyświetlając komunikat informujący użytkownika o niepoprawnym haśle.
