@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Zadanie2 {
+    public static void main(String[] args) {
+        List<Integer> tablica = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("zadanie2.txt"))) {
+            String linia;
+            while ((linia = br.readLine()) != null) {
+                tablica.add(Integer.parseInt(linia.trim()));
+            }
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Błąd: " + e.getMessage());
+        }
+        int suma = 0;
+        for (int liczba : tablica) {
+            if (liczba % 3 == 0) {
+                suma += liczba;
+            }
+        }
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("wyniki2.txt"))) {
+            bw.write(String.valueOf(suma));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
