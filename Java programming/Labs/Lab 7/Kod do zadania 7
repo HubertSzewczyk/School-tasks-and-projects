@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Zadanie7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] tablica = new int[6];
+
+        System.out.println("Podaj 6 liczb całkowitych:");
+        for (int i = 0; i < tablica.length; i++) {
+            tablica[i] = scanner.nextInt();
+        }
+
+        System.out.print("Przed sortowaniem: ");
+        wyswietlTablice(tablica);
+
+        for (int i = 0; i < tablica.length - 1; i++) {
+            for (int j = 0; j < tablica.length - 1 - i; j++) {
+                if (tablica[j] > tablica[j + 1]) {
+                    // Zamiana miejscami
+                    int temp = tablica[j];
+                    tablica[j] = tablica[j + 1];
+                    tablica[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.print("Po sortowaniu: ");
+        wyswietlTablice(tablica);
+        scanner.close();
+    }
+
+    public static void wyswietlTablice(int[] tab) {
+        for (int liczba : tab) {
+            System.out.print(liczba + " ");
+        }
+        System.out.println();
+    }
+}
