@@ -1,0 +1,27 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Zadanie4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Podaj nazwę pliku tekstowego do otwarcia: ");
+        String nazwaPliku = scanner.nextLine();
+        
+        try {
+            File plik = new File(nazwaPliku);
+            Scanner czytnik = new Scanner(plik);
+            System.out.println("Zawartość pliku \"" + nazwaPliku + "\":");
+            while (czytnik.hasNextLine()) {
+                System.out.println(czytnik.nextLine());
+            }
+            czytnik.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Błąd: Plik o nazwie \"" + nazwaPliku + "\" nie istnieje.");
+        } catch (Exception e) {
+            System.out.println("Wystąpił inny błąd podczas odczytu pliku: " + e.getMessage());
+        } finally {
+            scanner.close();
+        }
+    }
+}
