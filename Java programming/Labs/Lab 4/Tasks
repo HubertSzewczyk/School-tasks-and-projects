@@ -1,31 +1,33 @@
-Control structure - for loop
+Instrukcje sterujące: pętla for
 
-Task 1
-Write a program that prints the ASCII values ​​of characters with indices 65 to 90.
-To convert numbers to their corresponding ASCII characters in Java, simply cast the integer to the char type using a cast, e.g., char char = (char) number. Each integer is assigned a character according to the ASCII table.
+Zadanie 1
+Napisz program, który wypisze wartości ASCII znaków o indeksach od 65 do 90.
+Aby zamienić liczby na odpowiadające im znaki ASCII w Javie, wystarczy rzutować liczbę całkowitą na typ char, stosując rzutowanie, np. char znak =  (char) liczba. Każda liczba całkowita ma przypisany znak zgodny z tabelą ASCII.
 
-Task 2
-Write a program that prints all integers divisible by 3 between 1 and n, then adds them all and displays the result.
+Zadanie 2
+Napisz program, który wypisze wszystkie liczby całkowite podzielne przez 3 z  przedziału od 1 do n, a następnie dodaje je wszystkie i wyświetli wynik. 
 
-Task 3
-Write a program that prints a multiplication table (from 1x1 to 10x10) in tabular format.
-To obtain tabular format, you must use the tab character \t when printing.
+Zadanie 3
+Napisz program, który wydrukuje tabliczkę mnożenia (od 1x1 do 10x10) w formacie tabeli.
+Aby uzyskać zapis tabelaryczny, trzeba przy wypisywaniu trzeba zastosować znak tabulacji \t.
 
-Task 4
-Write a program that prints numbers from 1 to n and their squares in a table format using the following formula:
+Zadanie 4
+Napisz program, który wypisze liczby z przedziału od 1 do n oraz ich kwadraty w układzie tabelarycznym wg wzoru:
 
-Number | Square
+Liczba | Kwadrat
 
-1 | 1
+1             | 1
 
-2 | 4
+2             | 4
 
-3 | 9
+3             | 9
 
-Task 5
-Write a program that prints an inverted right triangle made of stars with a declared height h.
+...
 
-For example, for h = 5:
+Zadanie 5
+Napisz program, który wydrukuje odwrócony trójkąt prostokątny z gwiazdek o zadeklarowanej wysokości h. 
+
+Np. dla h = 5:
 
 *****
 
@@ -37,31 +39,34 @@ For example, for h = 5:
 
 *
 
-Task 6
-Write a program that prints all perfect numbers between 1 and 10,000. A perfect number is one whose divisors (excluding itself) sum to that number.
-The algorithm for checking whether a number is perfect involves finding the sum of all its divisors less than itself. 
-If this sum equals the given number, then the number is perfect. The algorithm works as follows: we iterate through numbers less than the given number, add the divisors, and finally compare the sum to the given number.
+Zadanie 6
+Napisz program, który wypisze wszystkie doskonałe liczby z przedziału od 1 do 10000. Liczba doskonała to taka, której suma dzielników (bez niej samej) jest równa tej liczbie.
+Algorytm sprawdzania, czy liczba jest doskonała, polega na znalezieniu sumy wszystkich jej dzielników mniejszych od niej samej. 
+Jeśli suma ta jest równa liczbie, to liczba jest doskonała. Kroki algorytmu: iterujemy po liczbach mniejszych od danej liczby, dodajemy te, które są jej dzielnikami, a na końcu porównujemy sumę z daną liczbą.
 
-Task 7
-Write a program that prints and calculates the sum of two control variables in a single loop:
-- i increases from 1 to 5,
-- j increases from 6 to 10.
+Zadanie 7
+Napisz program, który wypisze w jednej pętli i obliczy sumę dwóch zmiennych sterujących:
 
-The program should print the values ​​of i, j, and their sum in each iteration.
+- i rośnie od 1 do 5,
 
-Task 8
-Write a program that uses a single for loop with two counters to draw a triangle of asterisks:
-- i increases (specifies the row number),
-- j decreases (specifies the number of spaces before the asterisks).
+- j rośnie od 6 do 10.
 
-For example, for n = 5:
+Program ma wypisać w każdej iteracji wartość i, j oraz ich sumę.
 
-*
+Zadanie 8
+Napisz program, który za pomocą jednej pętli for z dwoma licznikami narysuje trójkąt z gwiazdek:
 
-**
+- i rośnie (określa numer wiersza),
+- j maleje (określa liczbę spacji przed gwiazdkami).
 
-***
+Np. dla n = 5:
 
-****
+     *
+
+   **
+
+  ***
+
+ ****
 
 *****
