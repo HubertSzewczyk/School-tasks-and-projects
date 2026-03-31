@@ -1,0 +1,27 @@
+Arrays in Java
+
+Task 1
+Napisz program, który utworzy 10-elementową tablicę, i wypełni ją liczbami całkowitymi podanymi przez użytkownika, a następnie obliczy sumę wszystkich elementów 
+
+Task 2
+Napisz program, który będzie pobierał od użytkownika liczby całkowite i zapisywał do 20-elementowanej tablicy tylko te, które są parzyste
+
+Task 3
+Napisz program, który wylosuje 10 liczb całkowitych z zakresu 1–100 i zapisze je do tablicy, a następnie wyświetli wszystkie liczby, sumę oraz średnią arytmetyczną elementów tablicy
+
+Task 4
+Napisz program, który utworzy 15-elementową tablicę z losowymi liczbami całkowitymi od 0 do 50. Program powinien zliczyć, ile liczb w tablicy jest parzystych, a ile nieparzystych, a następnie podać wyniki i wyświetlić te liczby osobno
+
+Task 5
+Napisz program, który utworzy 20-elementową tablicę wypełnioną losowymi liczbami całkowitymi z przedziału 1-10. Program ma następnie zapytać użytkownika o podanie dowolnej liczby z zakresu 1-10 i policzyć, ile razy podana wartość występuje w tablicy
+
+Task 6
+Napisz program, który wylosuje 10 liczb z zakresu 1–50 i zapisze je do tablicy.
+Program ma następnie poprosić użytkownika o podanie dowolnej liczby z zakresy 1-50 i obliczyć średnią wszystkich elementów większych od zadeklarowanej wartości 
+Jeśli nie ma takich elementów, ma wyświetlić odpowiedni komunikat odpowiedni komunikat
+
+Task 7
+Napisz program, który umożliwi wczytanie z klawiatury 6 liczb całkowitych i zapisz je w tablicy.
+Następnie ma posortować tablicę rosnąco bez użycia metod bibliotecznych, ale wykorzystując znane algorytmy sortowania (np. sortowanie bąbelkowe, sortowanie przez wybór, szybkie sortowanie)
+Program ma wyświetlić tablicę przed i po sortowaniu
+
