@@ -1,0 +1,22 @@
+import java.io.*;
+
+public class Zadanie4 {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("zadanie4.txt"));
+             BufferedWriter bwParzyste = new BufferedWriter(new FileWriter("parzyste.txt"));
+             BufferedWriter bwNieparzyste = new BufferedWriter(new FileWriter("nieparzyste.txt"))) {
+            
+            String linia;
+            while ((linia = br.readLine()) != null) {
+                int liczba = Integer.parseInt(linia.trim());
+                if (liczba % 2 == 0) {
+                    bwParzyste.write(liczba + "\n");
+                } else {
+                    bwNieparzyste.write(liczba + "\n");
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+    }
+}
