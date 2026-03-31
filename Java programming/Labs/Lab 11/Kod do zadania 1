@@ -1,0 +1,47 @@
+class Smartfon {
+    String marka;
+    int poziomBaterii;
+    boolean czyWlaczony;
+
+    public Smartfon(String marka, int poziomBaterii) {
+        this.marka = marka;
+        this.poziomBaterii = poziomBaterii;
+        this.czyWlaczony = false;
+    }
+
+    public void wlacz() {
+        if (poziomBaterii > 0) {
+            czyWlaczony = true;
+            System.out.println("Smartfon " + marka + " został włączony.");
+        } else {
+            System.out.println("Bateria rozładowana! Nie można włączyć.");
+        }
+    }
+
+    public void laduj(int oIle) {
+        poziomBaterii += oIle;
+        if (poziomBaterii > 100) poziomBaterii = 100;
+        System.out.println("Ładowanie... Poziom baterii: " + poziomBaterii + "%");
+    }
+
+    public void wyswietlStatus() {
+        String stan = czyWlaczony ? "Włączony" : "Wyłączony";
+        System.out.println("Smartfon " + marka + ": " + stan + " (Bateria: " + poziomBaterii + "%)");
+    }
+}
+
+//Sprawdzenie klasy Smartfon
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("\n--- Zadanie 6: Smartfon ---");
+        Smartfon m1 = new Smartfon("iPhone", 21);
+        Smartfon m2 = new Smartfon("Samsung", 67);
+        Smartfon m3 = new Smartfon("Xiaomi", 38);
+        
+        m1.wyswietlStatus();
+        m1.wlacz();
+        m3.wlacz(); // Nie włączy się
+        m3.laduj(50);
+        m3.wyswietlStatus();
+    }
+}
