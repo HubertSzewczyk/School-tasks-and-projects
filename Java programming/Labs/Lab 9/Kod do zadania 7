@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Zadanie7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Podaj tekst: ");
+        String tekst = scanner.nextLine();
+        System.out.print("Podaj wzorzec: ");
+        String wzorzec = scanner.nextLine();
+
+        int indeks = tekst.indexOf(wzorzec);
+        
+        if (indeks == -1) {
+            System.out.println("Wzorzec nie występuje w tekście.");
+        } else {
+            System.out.print("Wzorzec znaleziony na pozycjach: ");
+            while (indeks != -1) {
+                System.out.print(indeks + " ");
+                indeks = tekst.indexOf(wzorzec, indeks + 1);
+            }
+        }
+        scanner.close();
+    }
+}
