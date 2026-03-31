@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class WalidatorHasla {
+    public void sprawdzHaslo(String haslo) throws IllegalArgumentException {
+        if (haslo == null || haslo.length() < 8) {
+            throw new IllegalArgumentException("Hasło musi mieć co najmniej 8 znaków.");
+        }
+        System.out.println("Hasło jest poprawne.");
+    }
+}
+
+public class Zadanie6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        WalidatorHasla walidator = new WalidatorHasla();
+        
+        try {
+            System.out.print("Podaj hasło: ");
+            String haslo = scanner.nextLine();
+            walidator.sprawdzHaslo(haslo);  // metoda może zgłosić wyjątek
+        } catch (IllegalArgumentException e) {
+            System.out.println("Błąd: " + e.getMessage());
+        } finally {
+            scanner.close();
+        }
+    }
+}
