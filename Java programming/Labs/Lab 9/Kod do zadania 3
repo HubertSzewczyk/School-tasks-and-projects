@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Zadanie3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Wpisz tekst: ");
+        String tekst = scanner.nextLine().toLowerCase().replace(" ", "");
+        
+        boolean jestPalindromem = true;
+        for (int i = 0; i < tekst.length() / 2; i++) {
+            if (tekst.charAt(i) != tekst.charAt(tekst.length() - 1 - i)) {
+                jestPalindromem = false;
+                break;
+            }
+        }
+        
+        if (jestPalindromem) {
+            System.out.println("To jest palindrom.");
+        } else {
+            System.out.println("To nie jest palindrom.");
+        }
+        scanner.close();
+    }
+}
