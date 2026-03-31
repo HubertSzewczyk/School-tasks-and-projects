@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Zadanie2 {
+    public static void main(String[] args) {
+        ArrayList<Integer> liczby = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < 15; i++) {
+            liczby.add(random.nextInt(51)); // 0-50
+        }
+
+        List<Integer> parzyste = zwrocParzyste(liczby);
+
+        System.out.println("Oryginalna lista: " + liczby);
+        System.out.println("Liczby parzyste:  " + parzyste);
+    }
+
+    public static List<Integer> zwrocParzyste(List<Integer> wejscie) {
+        List<Integer> wynik = new ArrayList<>();
+        for (Integer n : wejscie) {
+            if (n % 2 == 0) wynik.add(n);
+        }
+        return wynik;
+    }
+}
