@@ -1,0 +1,44 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Zadanie3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] tablica = new int[6];
+        
+        System.out.println("Podaj sześć liczb całkowitych:");
+        for (int i = 0; i < 6; i++) {
+            boolean poprawna = false;
+            while (!poprawna) {
+                try {
+                    System.out.print("Liczba " + (i + 1) + ": ");
+                    tablica[i] = scanner.nextInt();
+                    poprawna = true;
+                } catch (InputMismatchException e) {
+                    System.out.println("Błędny format danych. Podaj liczbę całkowitą.");
+                    scanner.next(); // czyszczenie bufora
+                }
+            }
+        }
+        
+        try {
+            System.out.print("Podaj indeks licznika (0-5): ");
+            int idx1 = scanner.nextInt();
+            System.out.print("Podaj indeks mianownika (0-5): ");
+            int idx2 = scanner.nextInt();
+            
+            int licznik = tablica[idx1];
+            int mianownik = tablica[idx2];
+            int wynik = licznik / mianownik;
+            System.out.println("Wynik dzielenia: " + wynik);
+        } catch (InputMismatchException e) {
+            System.out.println("Błędny format danych. Podaj liczbę całkowitą.");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Błąd: Indeks poza zakresem tablicy (dozwolone 0-5).");
+        } catch (ArithmeticException e) {
+            System.out.println("Błąd: Dzielenie przez zero.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
