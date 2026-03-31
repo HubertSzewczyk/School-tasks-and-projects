@@ -13,7 +13,7 @@ public class PiosenkaOPiwie {
                System.out.println(butelki + " butelek piwa!");
                System.out.println("Weź jedną, przekaż dalej,");
                
-               // Obsługa gramatyki dla ostatniej butelki
+               // Ostatnia butelka
                String nastepnaFraza = (butelki - 1 == 1) ? "1 butelka" : (butelki - 1) + " butelek";
                System.out.println(nastepnaFraza + " piwa na ścianie!");
            }
