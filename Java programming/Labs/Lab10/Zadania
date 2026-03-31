@@ -14,6 +14,3 @@ Napisz program, który wczyta plik zadanie4.txt z liczbami, podzieli je na dwie 
 
 Zadanie 5. 
 Napisz program, który wczyta plik zadanie5.txt zawierający 5-elementowe ciągi liczb rozdzielone średnikiem zapisane w osobnych wierszach. Program ma dla każdego wiersza znaleźć największą liczbę i zapisać ją do pliku wyniki5.txt.
-
-Zadanie 6. 
-Napisz program, który wczyta plik zadanie6.txt. W każdym wierszu znajdują się dwie liczby: a (podstawa) i h (wysokość) trójkąta. Program ma policzyć pole trójkąta wg danych z każdego wiersza. Następnie program ma znaleźć 3 największe pola i zapisać je do pliku wyniki6.txt w kolejności malejącej.
