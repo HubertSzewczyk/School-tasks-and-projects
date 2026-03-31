@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class Zadanie5 {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("zadanie5.txt"));
+             BufferedWriter bw = new BufferedWriter(new FileWriter("wyniki5.txt"))) {
+            
+            String linia;
+            while ((linia = br.readLine()) != null) {
+                // Rozdzielenie ciągu po średniku
+                String[] elementy = linia.split(";");
+                int max = Integer.MIN_VALUE;
+                
+                for (String s : elementy) {
+                    int liczba = Integer.parseInt(s.trim());
+                    if (liczba > max) {
+                        max = liczba;
+                    }
+                }
+                
+                // Zapisanie największej liczby z danego wiersza
+                bw.write(max + "\n");
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+    }
+}
