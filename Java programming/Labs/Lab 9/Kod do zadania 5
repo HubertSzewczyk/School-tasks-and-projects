@@ -1,0 +1,22 @@
+public class Zadanie5 {
+    public static void main(String[] args) {
+        wizytuwka("Jan Kowalski", "ul. Wiejska 1", "00-001 Warszawa", "123-456-789");
+    }
+
+    public static void wizytuwka(String dane, String adres, String miasto, String tel) {
+        String[] linie = {dane, adres, miasto, tel};
+        int maxDlugosc = 0;
+
+        for (String l : linie) {
+            if (l.length() > maxDlugosc) maxDlugosc = l.length();
+        }
+
+        String gwiazdki = "*".repeat(maxDlugosc);
+
+        System.out.println(gwiazdki);
+        for (String l : linie) {
+            System.out.println(l);
+        }
+        System.out.println(gwiazdki);
+    }
+}
