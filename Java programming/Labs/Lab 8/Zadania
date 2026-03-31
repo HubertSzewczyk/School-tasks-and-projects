@@ -1,0 +1,19 @@
+Kolekcje: listy i zbiory
+
+Zadanie 1. 
+Napisz program, który utworzy ArrayList<String> i wczyta od użytkownika nazwy siedmiu produktów. Następnie poprosi użytkownika o podanie nazwy produktu do usunięcia i usunie z listy jego wszystkie wystąpienia. Program powinien wyświetlić finalną listę oraz liczbę pozostałych produktów.
+
+Zadanie 2. 
+Napisz program, który utworzy ArrayList<Integer> z piętnastoma losowymi liczbami od 0 do 50. Następnie napisze metodę statyczną, która zwróci nową listę zawierającą tylko liczby parzyste, i wyświetli zarówno oryginalną listę, jak i nową listę liczb parzystych.
+
+Zadanie 3. 
+Napisz program, który utworzy dwie listy ArrayList<Integer> zawierające po dziesięć losowych liczb całkowitych z zakresu od 1 do 20. Program powinien znaleźć i wyświetlić wszystkie liczby, które występują w obu listach.
+
+Zadanie 4. 
+Napisz program, który utworzy pustą listę ArrayList<Integer> i będzie losował liczby całkowite z zakresu od 1 do 30 tak długo, aż w liście znajdzie się dziesięć różnych liczb. Program powinien następnie wyświetlić listę unikalnych wylosowanych liczb.
+
+Zadanie 5. 
+Napisz program, który wylosuje piętnaście liczb całkowitych z zakresu od 1 do 20 i zapisze je w HashSet<Integer>. Program powinien wyświetlić tylko unikalne liczby, a także wyświetlić liczbę unikalnych elementów w zbiorze.
+
+Zadanie 6. 
+Napisz program, który utworzy dwa zbiory HashSet<Integer> zawierające losowe liczby całkowite z zakresu od 1 do 15. Program powinien wyświetlić elementy, które występują w obu zbiorach (część wspólną), oraz te, które są tylko w jednym z nich.
