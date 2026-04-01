@@ -1,7 +1,0 @@
-Write a program that randomly selects a list of 20 integers from 1 to 100 and analyzes them. The program should:
-• prompt the user for an operation to perform on the randomly selected numbers: calculate the average of the numbers, find the maximum and minimum, sort the numbers in ascending or descending order, and display even and odd numbers,
-• handle exceptions, e.g., when the user enters an invalid option or range of numbers,
-• display the results in a readable form on the console,
-• save the results to a text file,
-• allow for repeating operations without restarting the program
-
