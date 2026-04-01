@@ -1,0 +1,9 @@
+def konwerter(t_minuty):
+    godziny = t_minuty // 60
+    minuty = t_minuty % 60
+    return godziny, minuty
+
+w_godzina= int(input("Wprowadź liczbe minut: "))
+godziny, minuty = konwerter(w_godzina)
+
+print(f"{w_godzina} minut to {godziny} godzin i {minuty} minut.")
