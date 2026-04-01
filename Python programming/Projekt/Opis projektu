@@ -1,0 +1,10 @@
+Napisz program, który losuje listę 20 liczb całkowitych z przedziału od 1 do 100 i dokonuje ich
+analizy.
+Program powinien:
+• pytać użytkownika o operację do wykonania na wylosowanych liczbach: obliczenie
+średniej liczb, znalezienie maksimum i minimum, posortowanie liczb rosnąco lub
+malejąco oraz wyświetlenie liczb parzystych i nieparzystych,
+• obsługiwać wyjątki, np. gdy użytkownik poda niepoprawną opcję lub zakres liczb,
+• wyświetlić wyniki w czytelnej formie w konsoli,
+• zapisać wyniki do pliku tekstowego,
+• pozwolić powtarzać operacje bez ponownego uruchamiania programu.
