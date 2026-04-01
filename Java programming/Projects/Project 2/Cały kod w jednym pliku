@@ -3,7 +3,7 @@ import java.util.*;
 import java.time.LocalDate;
 import java.util.stream.Collectors;
 
-// --- Data ---
+// Dane
 
 class Employee implements Serializable {
     private String id;
@@ -18,7 +18,7 @@ class Employee implements Serializable {
         this.hourlyRate = hourlyRate;
     }
 
-    // Gettery i Settery dla edycji
+    // Gettery i Settery 
     public String getId() { return id; }
     public String getFullName() { return firstName + " " + lastName; }
     public double getHourlyRate() { return hourlyRate; }
@@ -49,7 +49,7 @@ class WorkEntry implements Serializable {
     public void setHours(double hours) { this.hours = hours; }
 }
 
-// --- System logic and Computation ---
+// Logika i oblicznia
 
 class PayrollManager {
     private List<Employee> employees = new ArrayList<>();
@@ -86,7 +86,7 @@ class PayrollManager {
         return totalHours * rate;
     }
 
-    // Widoki i Filtrowanie
+    // Filtrowanie
     public void printEmployeeWorkHistory(String empId, int month) {
         System.out.println("--- Historia pracy dla ID: " + empId + " (Miesiąc: " + month + ") ---");
         workEntries.stream()
@@ -94,7 +94,7 @@ class PayrollManager {
             .forEach(we -> System.out.println("Data: " + we.getDate() + " | Godziny: " + we.getHours()));
     }
 
-    // Pliki
+    // Obsługa plików
     public void saveToFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
             oos.writeObject(employees);
@@ -119,7 +119,7 @@ class PayrollManager {
     public List<Employee> getEmployees() { return employees; }
 }
 
-// --- User interface ---
+// Interfejs użytkownika
 
 public class PayrollSystem {
     private static PayrollManager manager = new PayrollManager();
