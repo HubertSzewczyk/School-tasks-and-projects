@@ -1,0 +1,105 @@
+import random # Obsługa liczb losowych
+import os     # Obsługa tworzenia i operacji na plikach
+
+def main():
+    print("Witaj w programie do analizy listy 20 losowych liczb!")
+    print("Program losuje listę raz na uruchomienie i pozwala wielokrotnie wykonywać operacje.\n")
+    
+    # Losowanie listy
+    numbers = [random.randint(1, 100) for _ in range(20)]
+    
+    print("Wylosowana lista liczb (1-100):")
+    print(numbers)
+    print("-" * 50)
+
+    # Flaga – czy możemy pisać do pliku
+    can_write_file = True
+    filename = "wyniki_analizy.txt"
+
+    # Zapisanie początkowej listy i sprawdzenie czy nie ma błędów
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write("=== ANALIZA LISTY LOSOWYCH LICZB ===\n")
+            f.write(f"Wylosowana lista: {numbers}\n")
+            f.write("=" * 50 + "\n\n")
+        print(f"Plik '{filename}' został utworzony pomyślnie.")
+    except PermissionError:
+        can_write_file = False
+        print("BŁĄD UPRAWNIEŃ: Nie można utworzyć pliku 'wyniki_analizy.txt'.")
+    except Exception as e:
+        can_write_file = False
+        print(f"Nieoczekiwany błąd przy tworzeniu pliku: {e}")
+
+    while True:
+        print("\n" + "=" * 50)
+        print("WYBIERZ OPERACJĘ:")
+        print("1. Obliczenie średniej wylosowanych liczb")
+        print("2. Znalezienie maksimum i minimum")
+        print("3. Posortowanie liczb rosnąco")
+        print("4. Posortowanie liczb malejąco")
+        print("5. Wyświetlenie liczb parzystych i nieparzystych")
+        print("6. Wyjście z programu")
+        print("=" * 50)
+
+        try:
+            wybor = int(input("\nPodaj numer operacji (1-6): "))
+            if not 1 <= wybor <= 6:
+                raise ValueError
+        except:
+            print("Błąd! Musisz podać liczbę od 1 do 6!")
+            continue
+
+        if wybor == 6:
+            print("\nDziękujemy za skorzystanie z programu!")
+            if not can_write_file:
+                print("Uwaga: wyniki nie zostały zapisane do pliku z powodu braku uprawnień.")
+            break
+
+        print("\n--- WYNIK OPERACJI ---")
+        wynik_do_pliku = ""
+
+        if wybor == 1:
+            srednia = sum(numbers) / len(numbers)
+            print(f"Średnia arytmetyczna: {srednia:.2f}")
+            wynik_do_pliku = f"Średnia arytmetyczna: {srednia:.2f}"
+
+        elif wybor == 2:
+            maks = max(numbers)
+            mini = min(numbers)
+            print(f"Maksimum: {maks}")
+            print(f"Minimum:  {mini}")
+            wynik_do_pliku = f"Maksimum: {maks}, Minimum: {mini}"
+
+        elif wybor == 3:
+            posortowane = sorted(numbers)
+            print("Liczby posortowane rosnąco:")
+            print(posortowane)
+            wynik_do_pliku = f"Posortowane rosnąco: {posortowane}"
+
+        elif wybor == 4:
+            posortowane = sorted(numbers, reverse=True)
+            print("Liczby posortowane malejąco:")
+            print(posortowane)
+            wynik_do_pliku = f"Posortowane malejąco: {posortowane}"
+
+        elif wybor == 5:
+            parzyste = [x for x in numbers if x % 2 == 0]
+            nieparzyste = [x for x in numbers if x % 2 != 0]
+            print("Liczby parzyste:", parzyste)
+            print("Liczby nieparzyste:", nieparzyste)
+            wynik_do_pliku = f"Parzyste: {parzyste}\nNieparzyste: {nieparzyste}"
+
+        # Zapis do pliku 
+        if can_write_file:
+            try:
+                with open(filename, "a", encoding="utf-8") as f:
+                    f.write(f"Operacja {wybor}: {wynik_do_pliku}\n")
+                    f.write("-" * 40 + "\n\n")
+            except PermissionError:
+                print("Nie udało się zapisać wyniku do pliku (brak uprawnień).")
+                can_write_file = False
+
+        print("\nMożesz teraz wybrać kolejną operację.")
+
+if __name__ == "__main__":
+    main()
