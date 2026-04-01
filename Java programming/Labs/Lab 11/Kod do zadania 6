@@ -1,0 +1,43 @@
+class KartaZawodnika {
+    String imieZawodnika;
+    String rzadkosc;
+    int ocenaOgolna;
+    
+    public KartaZawodnika(String imieZawodnika , String rzadkosc, int ocenaOgolna){
+        this.imieZawodnika = imieZawodnika;
+        this.rzadkosc = rzadkosc;
+        this.ocenaOgolna = ocenaOgolna;
+    }
+    
+    public void upgrade(int podniesienieOceny){
+        ocenaOgolna += podniesienieOceny;
+        System.out.println("Ocena ogólna zawodnika " + imieZawodnika + " została zmieniona, nowa ocena wynosi: " + ocenaOgolna);
+    }
+    
+    public boolean evoCheck(int podniesienieOceny){
+        if(ocenaOgolna >= 87 && podniesienieOceny >0){
+            System.out.println("Karta zawodnika może zostać poddana tej ewolucji.");
+            return true;
+        } else {
+            System.out.println("Niestety ale " + imieZawodnika + " nie pasuje do tej ewolucji.");
+            return false;
+        }
+    }
+    
+    public void daneZawodnika(){
+       System.out.println("Zawodnik: " + imieZawodnika + ", Rzadkość: " + rzadkosc + ", Ocena: " + ocenaOgolna);
+    }
+    
+}
+    
+public class Main{
+    public static void main(String[] args){
+        KartaZawodnika a1 = new KartaZawodnika("Pajor", "Złota rzadka karta", 88);
+        KartaZawodnika a2 = new KartaZawodnika("Pele", "Karta ikony", 92);
+        KartaZawodnika a3 = new KartaZawodnika("Agbonlahor", "Srebrna zwykła karta", 74);
+        
+        a1.daneZawodnika();
+        a2.upgrade(3);
+        a3.evoCheck(2);
+    }
+}
