@@ -1,0 +1,4 @@
+dlugosc = float(input("Podaj długość prostokąta: "))
+szerokosc = float(input("Podaj szerokość prostokąta: "))
+pole = dlugosc * szerokosc
+print(f"Pole tego prostokąta wynosi: {pole}")
