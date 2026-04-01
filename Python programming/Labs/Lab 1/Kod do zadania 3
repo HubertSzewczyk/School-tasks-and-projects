@@ -1,0 +1,4 @@
+rok = int(input("Podaj swój rok urodzenia "))
+aktualny = int(input("Podaj aktualny rok "))
+wiek = aktualny - rok
+print(f"Masz, {wiek} lat")
