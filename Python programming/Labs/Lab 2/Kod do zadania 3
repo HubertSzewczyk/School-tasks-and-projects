@@ -1,0 +1,9 @@
+cena = float(input("Wprowadź cene produktu: "))
+
+p_rabat = int(input("Wprowadź procent rabatu: "))
+
+rabat = cena * (p_rabat / 100)
+
+cena_rabat = cena - rabat
+
+print(f"Cena po rabacie wynosi: {cena_rabat:.2f}")
