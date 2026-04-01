@@ -1,0 +1,8 @@
+def konwerter():
+    centymetry = float(input("Wprowadź długość w milimetrach: "))
+    metry = centymetry / 100
+    milimetry = centymetry * 10
+    print(f"Długośc w metrach wynosi: {metry} m")
+    print(f"Długość w milimetrach wynosi: {milimetry} mm")
+
+konwerter()
