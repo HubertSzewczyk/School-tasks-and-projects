@@ -1,0 +1,16 @@
+Zmienne, typy proste i podstawowe operacje
+
+Zadanie 1.
+Napisz program, który zapyta użytkownika o długość i szerokość prostokąta, a następnie obliczy i wyświetli jego pole.
+
+Zadanie 2.
+Napisz program, który porposi o podanie dwóch liczb całkowitych a i b, a następnie obliczy i wyświetli wynik dzielenia całkowitego (a // b) oraz resztę z dzielenia (a % b).
+
+Zadanie 3.
+Napisz program, który poprosi o podanie ceny produktu (float) i wysokości rabatu (int) w procentach, a następnie wyświetli cenę po rabacie.
+
+Zadanie 4.
+Napisz program, który poprosi użytkownika o podanie  długości w centymetrach, a następnie obliczy i wyświetli tę długość w metrach oraz milimetrach.
+
+Zadanie 5.
+Napisz program, który poprosi użytkownika o podanie temperatury w stopniach Celsjusza, a następnie przeliczy ją na stopnie Fahrenheita, korzystając ze wzoru: F = (C * 9/5) + 32.
